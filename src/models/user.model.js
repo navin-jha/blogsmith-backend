@@ -43,11 +43,9 @@ userShcema.methods.generateAccessToken = function () {
 };
 
 userShcema.methods.generateRefreshToken = function () {
-  return jwt.sign(
-    { id: this._id },
-    process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
-  );
+  return jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
+  });
 };
 
 export const User = model("User", userShcema);
