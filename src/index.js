@@ -16,5 +16,5 @@ connectDB()
     });
   })
   .catch((error) => {
-    console.error("Failed to connect MongoDB:", error);
+    console.error("❌ Failed to connect MongoDB:", error);
   });
